@@ -19,6 +19,5 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 private fun AppScreen() {
-    ScrollableGalleryScreen()
+    LazyGrid()
 }
-
