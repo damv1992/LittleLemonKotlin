@@ -2,13 +2,18 @@ package com.example.littlelemon
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.*
+import androidx.compose.material.Button
+import androidx.compose.material.ButtonDefaults
+import androidx.compose.material.Card
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
@@ -18,10 +23,9 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
 
 @Composable
-fun HomeScreen(navController: NavController) {
+fun HomeScreen() {
     Column {
         Column(
             modifier = Modifier
@@ -58,7 +62,7 @@ fun HomeScreen(navController: NavController) {
                 )
             }
             Button(
-                onClick = { navController.navigate(Menu.route) },
+                onClick = {},
                 shape = RoundedCornerShape(20.dp),
                 colors = ButtonDefaults.buttonColors(backgroundColor = Color(0xFFF4CE14))
             ) {
@@ -75,51 +79,12 @@ fun HomeScreen(navController: NavController) {
 }
 
 @Composable
-fun TopAppBar() {
-    Box(
-        modifier = Modifier.fillMaxWidth()
-    ) {
-        IconButton(
-            onClick = { /*TODO*/ },
-            modifier = Modifier.align(Alignment.CenterStart)
-        ) {
-            Image(
-                painter = painterResource(id = R.drawable.ic_hamburger_menu),
-                contentDescription = "Menu Icon"
-            )
-        }
-
-        Image(
-            painter = painterResource(id = R.drawable.littlelemonimgtxt_nobg),
-            contentDescription = "Little Lemon Logo",
-            modifier = Modifier
-                .fillMaxWidth(.32f)
-                .align(Alignment.Center)
-        )
-
-        IconButton(
-            onClick = { /*TODO*/ },
-            modifier = Modifier.align(Alignment.CenterEnd)
-        ) {
-            Box {
-                Image(
-                    painter = painterResource(id = R.drawable.ic_basket),
-                    contentDescription = "Basket"
-                )
-            }
-        }
-    }
-}
-
-
-@Composable
 private fun LowerPanel() {
     Column {
         WeeklySpecialCard()
         MenuDish()
     }
 }
-
 
 @Composable
 fun WeeklySpecialCard() {
@@ -136,7 +101,6 @@ fun WeeklySpecialCard() {
         )
     }
 }
-
 
 @Composable
 fun MenuDish() {

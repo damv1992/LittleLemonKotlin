@@ -22,13 +22,11 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun MenuListScreen() {
-
+fun MenuScreen() {
     Column {
         UpperPanel()
         LowerPanel()
     }
-
 }
 
 @Composable
@@ -45,7 +43,6 @@ private fun UpperPanel() {
             fontWeight = Bold,
             color = Color(0xFFF4CE14)
         )
-
     }
     Text(
         text = stringResource(id = R.string.order_for_takeaway),
