@@ -1,23 +1,21 @@
-package com.example.littlelemon
+package com.hanna.littlelemon
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Database
-import androidx.room.Entity
-import androidx.room.Insert
-import androidx.room.PrimaryKey
-import androidx.room.Query
-import androidx.room.RoomDatabase
+import androidx.room.*
 
 @Entity
 data class MenuItemRoom(
-    @PrimaryKey val id: Int,
+    @PrimaryKey
+    val id: Int,
     val title: String,
+    val description: String,
     val price: Double,
+    val category: String,
+    val image: String
 )
 
 @Dao
-interface MenuItemDao {
+interface MenuItemDao{
     @Query("SELECT * FROM MenuItemRoom")
     fun getAll(): LiveData<List<MenuItemRoom>>
 
@@ -29,6 +27,6 @@ interface MenuItemDao {
 }
 
 @Database(entities = [MenuItemRoom::class], version = 1)
-abstract class AppDatabase : RoomDatabase() {
+abstract class AppDatabase: RoomDatabase(){
     abstract fun menuItemDao(): MenuItemDao
 }

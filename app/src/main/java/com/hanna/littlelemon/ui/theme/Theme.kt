@@ -1,4 +1,4 @@
-package com.example.littlelemon.ui.theme
+package com.hanna.littlelemon.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
@@ -13,14 +13,14 @@ private val DarkColorPalette = darkColors(
 )
 
 private val LightColorPalette = lightColors(
-    primary = Yellow,
+    primary = Purple500,
     primaryVariant = Purple700,
-    secondary = Teal200,
-    onPrimary = Gray,
+    secondary = Teal200
 
     /* Other default colors to override
     background = Color.White,
     surface = Color.White,
+    onPrimary = Color.White,
     onSecondary = Color.Black,
     onBackground = Color.Black,
     onSurface = Color.Black,
@@ -28,10 +28,7 @@ private val LightColorPalette = lightColors(
 )
 
 @Composable
-fun LittleLemonTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit
-) {
+fun LittleLemonTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable () -> Unit) {
     val colors = if (darkTheme) {
         DarkColorPalette
     } else {
